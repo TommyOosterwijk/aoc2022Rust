@@ -28,17 +28,12 @@ fn main() {
 
     let input = include_str!("../day2.txt");
 
-    let sum: i32 = input.split("\n").map(| i| {
-        return rps_score.get(i).unwrap();
-    }).sum();
+    let sum: i32 = input.split("\n").map(| i| rps_score.get(i).unwrap()).sum();
 
     println!("A: {}", sum.to_string());
 
-    let sum_b: i32 = input.split("\n").map(|s| {
-        return rps_refactor.get(s).unwrap();
-    }).map(| i| {
-        return rps_score.get(i).unwrap();
-    }).sum();
+    let sum_b: i32 = input.split("\n").map(|s | rps_refactor.get(s).unwrap()
+    ).map(| i| rps_score.get(i).unwrap()).sum();
 
     println!("B: {}", sum_b.to_string());
 

@@ -7,14 +7,11 @@ fn main() {
     println!(" A: {}", result);
 
 
-    let lines = input.clone().collect::<Vec<_>>();
-    let mut vec=Vec::new();
+    let result_b : i32 = input.clone().collect::<Vec<_>>().chunks(3).map(|g| {
+        return get_values(g.get(0).unwrap(), g.get(1).unwrap(), g.get(2).unwrap());
+    }).map(|i| convert_value(i)).sum();
 
-    for group in lines.chunks(3) {
-        let result = get_values(group.get(0).unwrap(), group.get(1).unwrap(), group.get(2).unwrap());
-        vec.push(result);
-    }
-    let result_b : i32 = vec.into_iter().map(|i| convert_value(i)).sum();
+    
     println!(" B: {}", result_b);
 
 }

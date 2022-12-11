@@ -1,6 +1,3 @@
-use std::vec;
-
-
 fn main() {
     println!("Day3!");
 
@@ -9,7 +6,8 @@ fn main() {
     let result: i32 = input.clone().map(| s | get_value(s)).map(|i| convert_value(i)).sum();
     println!(" A: {}", result);
 
-    let lines: Vec<&str> = include_str!("../day3.txt").lines().into_iter().collect();
+
+    let lines = input.clone().collect::<Vec<_>>();
     let mut vec=Vec::new();
 
     for group in lines.chunks(3) {

@@ -47,17 +47,8 @@ fn main() {
     });
 
 println!("A: {}", answer_a);
-let s: String = string_value.iter().take(40).collect();
-let s1: String = string_value.iter().skip(40).take(40).collect();
-let s2: String = string_value.iter().skip(80).take(40).collect();
-let s3: String = string_value.iter().skip(120).take(40).collect();
-let s4: String = string_value.iter().skip(160).take(40).collect();
-let s5: String = string_value.iter().skip(200).take(40).collect();
-println!("{}", s);
-println!("{}", s1);
-println!("{}", s2);
-println!("{}", s3);
-println!("{}", s4);
-println!("{}", s5);
+println!("B:");
+string_value.chunks(40).for_each(|crt_line| println!("{:?}", crt_line.iter().collect::<String>()));
+
 
 }

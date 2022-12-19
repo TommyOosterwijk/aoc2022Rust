@@ -27,7 +27,7 @@ fn main() {
     let mut place_holders: Vec<Vec<u128>> = Vec::new();
     let mut monkey_inspect_counter: Vec<u128> = Vec::new();
 
-    for i in 0.. monkey_list.len() {
+    for _ in 0.. monkey_list.len() {
         let v: Vec<u128> = Vec::new();
         place_holders.push(v);
         monkey_inspect_counter.push(0);
@@ -66,7 +66,7 @@ fn main() {
 }
 
 fn do_operation(val: &u128, operation: &String) -> u128{
-    let mut result: u128 = 0;
+    let result: u128;
 
     if operation.contains("*") {
         if operation.len() == 1 {
@@ -79,5 +79,6 @@ fn do_operation(val: &u128, operation: &String) -> u128{
         result = val + operation.parse::<u128>().unwrap();
     }
 
+    //9699690 is the least common multiplier (the bus challange 2 years ago) of all the monkey divers.
     return result % 9699690;
 }

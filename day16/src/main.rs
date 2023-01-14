@@ -1,7 +1,6 @@
 use std::{collections::HashMap};
 use std::time::{Instant};
 
-
 #[derive(Clone, Debug)]
 struct Valve {
     name: String,
@@ -54,13 +53,13 @@ fn main() {
     find_best_route_a(&mut valve_map, "AA".to_string(), 30, 0, &mut Vec::new(), 0, 0, &mut max_pressure_a);
     println!("A: {} in time {}", max_pressure_a, now.elapsed().as_millis());
 
-    let mut max_pressure_b = 0;
-    let now_b = Instant::now();
-    find_best_route_b(&mut valve_map, "AA".to_string(), 0, "AA".to_string(), 0, 26, 0, &mut Vec::new(), 0, 0, &mut max_pressure_b, &mut Vec::new());
-    println!("B: {} in time {}", max_pressure_b, now_b.elapsed().as_millis());
-
+    // let mut max_pressure_b = 0;
+    // let now_b = Instant::now();
+    // find_best_route_b(&mut valve_map, "AA".to_string(), 0, "AA".to_string(), 0, 26, 0, &mut Vec::new(), 0, 0, &mut max_pressure_b, &mut Vec::new());
+    // println!("B: {} in time {}", max_pressure_b, now_b.elapsed().as_millis());
 
 }
+
 
 fn find_best_route_b(valve_map: &mut HashMap<String, Valve>, me_target: String, mut me_steps_till_target: i32, elephant_target: String, mut elephant_steps_till_target: i32, max_steps: i32, mut current_step: i32, visited_list: &mut Vec<String>, pressure: i32, mut total_pressure: i32, max_pressure_found: &mut i32, pressure_steps: &mut Vec<String>) {
     let mut me_pressure = 0;
